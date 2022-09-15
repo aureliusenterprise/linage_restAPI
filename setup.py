@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="m4i-linage-rest-api",
+    name="m4i-lineage-rest-api",
     version="1.0.0",
     url="https://github.com/aureliusenterprise/linage_restAPI",
     author="Aurelius Enterprise",
