@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+m4i-atlas-core = {git = "https://github.com/aureliusenterprise/m4i_atlas_core.git", ref = 'rc-1.0.0', editable = true}
+Flask = "*"
+requests = "*"
+pandas = "*"
+SQLAlchemy = "*"
+flask-restx = "*"
+MarkupSafe = "==2.0.1"
+msgpack = "*"
+ujson = "*"
+
+[dev-packages]
+pytest = "*"
+
+
+[requires]
+python_version = "3.6"
