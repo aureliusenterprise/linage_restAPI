@@ -7,7 +7,7 @@ from m4i_atlas_core.entities.atlas.processes import process_entity_types
 
 from config import config
 from credentials import credentials
-from . import settings
+from m4i_lineage_rest_api import settings
 from .lin_api.process.microservice_process.microservice_process import ns as microservice_namespace
 from .lin_api.process.generic_process.generic_process import ns as generic_process_namespace
 from .lin_api.process.connector_process.connector_process import ns as connector_process_namespace

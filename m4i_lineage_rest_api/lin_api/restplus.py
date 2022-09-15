@@ -3,7 +3,7 @@ import traceback
 from flask_restx import Api
 from sqlalchemy.orm.exc import NoResultFound
 
-from . import settings
+from m4i_lineage_rest_api import settings
 
 log = logging.getLogger(__name__)
 
