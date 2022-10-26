@@ -15,8 +15,9 @@ setup(
         "MarkupSafe==2.0.1",
         "msgpack",
         "ujson",
-        "m4i_atlas_core"
-
+        "m4i_atlas_core",
+        "m4i_backend_core",
+        "flask_httpauth"
     ],
     zip_safe=False
 )

@@ -5,3 +5,4 @@ from .m4i_generic_entity_serializers import *
 from .output_filter_functions import *
 from .process import *
 from .restplus import *
+from .authorization_definition import *
