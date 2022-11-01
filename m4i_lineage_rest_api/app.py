@@ -5,8 +5,8 @@ from m4i_atlas_core import ConfigStore, register_atlas_entity_types, \
     data_dictionary_entity_types, kubernetes_entity_types, connectors_entity_types
 from m4i_atlas_core.entities.atlas.processes import process_entity_types
 
-from config import config
-from credentials import credentials
+from .config import config
+from .credentials import credentials
 from m4i_lineage_rest_api import settings
 from .lin_api.process.microservice_process.microservice_process import ns as microservice_namespace
 from .lin_api.process.generic_process.generic_process import ns as generic_process_namespace
@@ -39,9 +39,9 @@ class flask_app(object):
     def __init__(self):
         self.app = Flask(__name__)
 
-        logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), '../logging.conf'))
-        logging.config.fileConfig(logging_conf_path)
-        self.log = logging.getLogger(__name__)
+        # logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'logging.conf'))
+        # logging.config.fileConfig(logging_conf_path)
+        # self.log = logging.getLogger(__name__)
 
     def configure_app(self):
         ## take values from settings.py
