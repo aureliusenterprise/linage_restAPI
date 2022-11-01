@@ -39,9 +39,9 @@ class flask_app(object):
     def __init__(self):
         self.app = Flask(__name__)
 
-        # logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'logging.conf'))
-        # logging.config.fileConfig(logging_conf_path)
-        # self.log = logging.getLogger(__name__)
+        logging_conf_path = os.path.normpath(os.path.join(os.path.dirname(__file__), 'logging.conf'))
+        logging.config.fileConfig(logging_conf_path)
+        self.log = logging.getLogger(__name__)
 
     def configure_app(self):
         ## take values from settings.py
