@@ -4,6 +4,7 @@ from flask import Flask, Blueprint
 from m4i_atlas_core import ConfigStore, register_atlas_entity_types, \
     data_dictionary_entity_types, kubernetes_entity_types, connectors_entity_types
 from m4i_atlas_core.entities.atlas.processes import process_entity_types
+from m4i_backend_core.shared import register as register_shared
 
 from .config import config
 from .credentials import credentials
@@ -45,7 +46,7 @@ class flask_app(object):
 
     def configure_app(self):
         ## take values from settings.py
-        self.app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
+        # self.app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
         self.app.config['SWAGGER_UI_DOC_EXPANSION'] = settings.RESTPLUS_SWAGGER_UI_DOC_EXPANSION
         self.app.config['RESTPLUS_VALIDATE'] = settings.RESTPLUS_VALIDATE
         self.app.config['RESTPLUS_MASK_SWAGGER'] = settings.RESTPLUS_MASK_SWAGGER
@@ -84,7 +85,7 @@ class flask_app(object):
     def run_app(self):
         self.log.info(
             '>>>>> Starting development server at http://{}/lin_api/ <<<<<'.format(self.app.config['SERVER_NAME']))
-        self.app.run(debug=settings.FLASK_DEBUG, host="0.0.0.0")
+        self.app.run()
 
 
 def init_config():
@@ -109,6 +110,12 @@ def main():
     app_flask = flask_app()
     app_flask.initialize_app()
     app_flask.run_app()
+
+def register_get_app():
+    app_flask = flask_app()
+    app_flask.initialize_app()
+    register_shared(app_flask.app)
+    return app_flask.app
 
 
 if __name__ == "__main__":
